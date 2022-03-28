@@ -4,7 +4,7 @@
 
 ###> docker ###
 /docker-compose.*.yml
-/!docker-compose.override.yml
+!/docker-compose.override.yml
 ###< docker ###
 
 ###> symfony/framework-bundle ###
