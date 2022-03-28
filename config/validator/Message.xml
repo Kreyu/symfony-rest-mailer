@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        https://symfony.com/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd">
+    <class name="App\Mailer\Doctrine\Entity\Message">
+        <property name="from">
+            <constraint name="Count">
+                <option name="min">1</option>
+            </constraint>
+            <constraint name="All">
+                <option name="constraints">
+                    <constraint name="Type">App\Mailer\Doctrine\Entity\ValueObject\Address</constraint>
+                </option>
+            </constraint>
+            <constraint name="Valid"/>
+        </property>
+        <property name="to">
+            <constraint name="Count">
+                <option name="min">1</option>
+            </constraint>
+            <constraint name="All">
+                <option name="constraints">
+                    <constraint name="Type">App\Mailer\Doctrine\Entity\ValueObject\Address</constraint>
+                </option>
+            </constraint>
+            <constraint name="Valid"/>
+        </property>
+        <property name="replyTo">
+            <constraint name="All">
+                <option name="constraints">
+                    <constraint name="Type">App\Mailer\Doctrine\Entity\ValueObject\Address</constraint>
+                </option>
+            </constraint>
+            <constraint name="Valid"/>
+        </property>
+        <property name="cc">
+            <constraint name="All">
+                <option name="constraints">
+                    <constraint name="Type">App\Mailer\Doctrine\Entity\ValueObject\Address</constraint>
+                </option>
+            </constraint>
+            <constraint name="Valid"/>
+        </property>
+        <property name="bcc">
+            <constraint name="All">
+                <option name="constraints">
+                    <constraint name="Type">App\Mailer\Doctrine\Entity\ValueObject\Address</constraint>
+                </option>
+            </constraint>
+            <constraint name="Valid"/>
+        </property>
+        <property name="body">
+            <constraint name="NotBlank"/>
+        </property>
+        <getter property="sender">
+            <constraint name="Type">App\Mailer\Doctrine\Entity\ValueObject\Address</constraint>
+            <constraint name="Valid"/>
+        </getter>
+        <getter property="returnPath">
+            <constraint name="Type">App\Mailer\Doctrine\Entity\ValueObject\Address</constraint>
+            <constraint name="Valid"/>
+        </getter>
+    </class>
+</constraint-mapping>

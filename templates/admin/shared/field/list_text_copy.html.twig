@@ -1,0 +1,40 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+{# @var value string #}
+
+{% extends 'admin/shared/field/base_list_field.html.twig' %}
+
+{%- block field_value %}
+    <div class="btn-group sonata-ba-list-field-actions">
+        <a
+            href="#"
+            class="btn btn-sm btn-default" title="{{ 'action_show'|trans({}, 'SonataAdminBundle') }}"
+        >
+            <i class="fa fa-copy" aria-hidden="true"></i>
+
+            {{ 'action_show'|trans({}, 'SonataAdminBundle') }}
+            <span class="sr-only">
+                    {{ 'action_show'|trans({}, 'SonataAdminBundle') }}
+                </span>
+        </a>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <pre>{{ value }}</pre>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock -%}

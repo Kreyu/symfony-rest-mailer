@@ -1,0 +1,33 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+{# @var object \App\Mailer\Doctrine\Entity\Transaction #}
+{# @var value null|string #}
+
+{% extends 'admin/shared/field/base_list_field.html.twig' %}
+
+{%- block field_value %}
+    {% if value is null %}
+        {{ 'delivery_modal.status.pending'|trans({}, admin.translationDomain) }}
+    {% else %}
+        <span style="cursor: pointer; text-decoration: underline dotted" data-toggle="modal" data-target="#email-transaction-{{ object.id }}">
+            {{ object.exceptionMessage }}
+        </span>
+
+        <div class="modal fade" id="email-transaction-{{ object.id }}" tabindex="-1" role="dialog" aria-labelledby="emailTransactionModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ 'delivery_modal.title'|trans({}, admin.translationDomain) }}</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p><strong>{{ 'delivery_modal.status.error.exception_code'|trans({}, admin.translationDomain) }}: </strong> {{ object.exceptionCode }}</p>
+                        <p><strong>{{ 'delivery_modal.status.error.exception_class'|trans({}, admin.translationDomain) }}: </strong> {{ object.exceptionClass }}</p>
+                        <pre>{{ object.exceptionMessage }}</pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">{{ 'delivery_modal.close'|trans({}, admin.translationDomain) }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock -%}

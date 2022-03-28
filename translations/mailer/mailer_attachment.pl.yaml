@@ -1,0 +1,42 @@
+Attachments: Załączniki
+Attachment: Załącznik
+
+# Breadcrumbs
+breadcrumb.link_attachment_list: Załączniki
+
+# List
+list.label_id: ID
+list.label_uuid: UUID
+list.label_message_project: Projekt
+list.label_message: Wiadomość email
+list.label_name: Nazwa
+list.label_content_type: Content-Type
+list.label_content_id: Content-ID
+list.label_created_at: Data utworzenia
+list.label__actions: Akcje
+
+# Datagrid filters
+filter.label_id: ID
+filter.label_uuid: UUID
+filter.label_message_project: Projekt
+filter.label_message: Wiadomość email
+filter.label_name: Nazwa
+filter.label_content_type: Content-Type
+filter.label_content_id: Content-ID
+filter.label_created_at: Data utworzenia
+
+# Form
+form.group_basic: Podstawowe informacje
+form.label_name: Nazwa
+form.label_content_type: Content-Type
+form.label_content_id: Content-ID
+form.label_file: Plik załącznika
+form.help_content_id: 'Jeśli podany, załącznik zostaje embedowany. Przykładowo, załącznik o Content-ID równym "example-file" dostępny będzie pod adresem "cid:example-file".'
+form.help_file: 'Uwaga: wybrany plik zastąpi dotychczasowy na dysku.'
+
+# Flashes
+flash.file_not_found: Plik załącznika %attachment% nie istnieje na dysku.
+
+# Actions
+action.download: Pobierz
+action.show_message: Pokaż wiadomość email

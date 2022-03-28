@@ -1,0 +1,51 @@
+a.logo > img {
+    padding: 10px !important;
+    margin-bottom: 2px !important;
+}
+
+a.logo > span {
+    margin-bottom: 1px;
+}
+
+.sonata-ba-list td, .sonata-ba-list th {
+    vertical-align: middle !important;
+}
+
+.sonata-ba-list-field-actions i {
+    margin: 5px 3px;
+}
+
+.sonata-ba-list-field-actions .btn-group {
+    width: 100%;
+}
+
+.sonata-ba-list-field-actions .btn-group a {
+    margin: 2px 4px;
+    border-radius: 3px !important;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .sonata-ba-list-field-actions .btn-group a {
+        margin: 2px 0;
+        border-radius: 3px !important;
+    }
+
+    .per-page + .select2-container {
+        margin-top: 5px;
+    }
+}
+
+.font-monospace {
+    font-family: monospace !important;
+}
+
+/* sonata collection form type - add/delete button */
+.sonata-collection-row > .row > .col-xs-1 {
+    width: auto;
+}
+
+/* sonata collection form type - field next to add/delete button */
+.sonata-collection-row > .row > .col-xs-11 {
+    padding-left: 0;
+}

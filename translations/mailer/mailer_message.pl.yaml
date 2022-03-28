@@ -1,0 +1,64 @@
+Messages: Wiadomości email
+Message: Wiadomość
+
+# Breadcrumbs
+breadcrumb.link_message_list: Wiadomości email
+
+# List
+list.label_id: ID
+list.label_uuid: UUID
+list.label_project: Projekt
+list.label_subject: Temat
+list.label_from: Nadawca
+list.label_to: Odbiorca
+list.label_latest_transaction: Wysyłka
+list.label_created_at: Data utworzenia
+list.label__actions: Akcje
+
+# Show
+show.group_basic: Podstawowe informacje
+show.group_metadata: MIME Metadata
+show.label_id: ID
+show.label_uuid: UUID
+show.label_project: Projekt
+show.label_created_at: Data utworzenia
+show.label_subject: Subject
+show.label_from: From
+show.label_to: To
+show.label_reply_to: Reply-To
+show.label_cc: CC
+show.label_bcc: BCC
+show.label_sender: Sender
+show.label_priority: Priority
+show.label_date: Date
+show.label_return_path: Return Path
+show.label_charset: Charset
+
+# Datagrid filters
+filter.label_id: ID
+filter.label_uuid: UUID
+filter.label_project: Projekt
+filter.label_subject: Temat
+filter.label_from: Nadawca
+filter.label_to: Odbiorca
+filter.label_created_at: Data utworzenia
+
+# Latest transaction modal
+latest_transaction_modal.title: Szczegóły wysyłki
+latest_transaction_modal.status.pending: Oczekiwanie
+latest_transaction_modal.status.delivered: Dostarczono
+latest_transaction_modal.status.delivered.message_id: Message ID
+latest_transaction_modal.status.error.exception_code: Kod błędu
+latest_transaction_modal.status.error.exception_class: Wyjątek
+latest_transaction_modal.status.error: Błąd
+
+# Actions
+action.back_to_show: Powrót do wiadomości
+action.list_attachments: Załączniki
+action.list_transactions: Historia wysyłek
+action.preview: Podgląd
+action.resend: Wyślij ponownie
+
+# Flashes
+flash.attachment_file_not_found: Co najmniej jeden plik załącznika wiadomości %message% nie istnieje na dysku.
+flash.resend_action_successful: 'Kopia wiadomości (wraz z załącznikami) została utworzona i dodana do kolejki. Identyfikator nowej wiadomości to #%message_id% (%message_uuid%).'

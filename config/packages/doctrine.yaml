@@ -1,0 +1,28 @@
+doctrine:
+    dbal:
+        url: '%env(resolve:DATABASE_URL)%'
+        types:
+            address_json: App\Mailer\Doctrine\Types\AddressJsonType
+    orm:
+        auto_generate_proxy_classes: true
+        naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+        auto_mapping: true
+        mappings:
+            OAuth2:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/OAuth2/Entity'
+                prefix: 'App\OAuth2\Entity'
+                alias: OAuth2
+            Project:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/Project/Entity'
+                prefix: 'App\Project\Entity'
+                alias: Project
+            Mailer:
+                is_bundle: false
+                type: attribute
+                dir: '%kernel.project_dir%/src/Mailer/Entity'
+                prefix: 'App\Mailer\Entity'
+                alias: Mailer

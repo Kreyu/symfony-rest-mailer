@@ -1,0 +1,22 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{% if admin.hasAccess('download', object) and admin.hasRoute('download') %}
+    {% set button_content = sonata_config.getOption('list_action_button_content') %}
+
+    <a
+        href="{{ admin.generateObjectUrl('download', object, actions.link_parameters|default([])) }}"
+        class="btn btn-sm btn-default"
+        title="{{ 'action.download'|trans({}, admin.translationDomain) }}"
+    >
+        {% if button_content == 'icon' or button_content == 'all' %}
+            <i class="fas fa-download" aria-hidden="true"></i>
+        {% endif %}
+        {% if button_content == 'text' or button_content == 'all' %}
+            {{ 'action.download'|trans({}, admin.translationDomain) }}
+        {% else %}
+            <span class="sr-only">
+                {{ 'action.download'|trans({}, admin.translationDomain) }}
+            </span>
+        {% endif %}
+    </a>
+{% endif %}

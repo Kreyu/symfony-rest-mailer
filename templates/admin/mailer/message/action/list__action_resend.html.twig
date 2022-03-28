@@ -1,0 +1,22 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{% if admin.hasAccess('resend', object) and admin.hasRoute('resend') %}
+    {% set button_content = sonata_config.getOption('list_action_button_content') %}
+
+    <a
+        href="{{ admin.generateObjectUrl('resend', object, actions.link_parameters|default([])) }}"
+        class="btn btn-sm btn-default"
+        title="{{ 'action.resend'|trans({}, admin.translationDomain) }}"
+    >
+        {% if button_content == 'icon' or button_content == 'all' %}
+            <i class="fas fa-share" aria-hidden="true"></i>
+        {% endif %}
+        {% if button_content == 'text' or button_content == 'all' %}
+            {{ 'action.resend'|trans({}, admin.translationDomain) }}
+        {% else %}
+            <span class="sr-only">
+                {{ 'action.resend'|trans({}, admin.translationDomain) }}
+            </span>
+        {% endif %}
+    </a>
+{% endif %}

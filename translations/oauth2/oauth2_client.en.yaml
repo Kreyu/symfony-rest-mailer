@@ -1,0 +1,23 @@
+OAuth2 Clients: Clients
+Client: Client
+
+# Breadcrumbs
+breadcrumb.link_client_list: OAuth2 clients
+breadcrumb.link_client_create: New client
+
+# Form
+form.group_basic: Basic information
+form.label_name: Name
+form.label_projects: Projects
+form.label_active: Active
+
+# List
+list.label_identifier: ID
+list.label_name: Name
+list.label_secret: Secret token
+list.label_projects: Projects
+list.label_active: Active
+list.label__actions: Actions
+
+# Actions
+action.copy_secret_token: Copy secret token

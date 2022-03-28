@@ -1,0 +1,27 @@
+imports:
+    - { resource: services/ }
+
+parameters:
+    # ...
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/Mailer/'
+            - '../src/OAuth2/'
+            - '../src/Kernel.php'
+
+    shared.admin.event_listener.active_item_menu:
+        class: App\Shared\Admin\EventListener\ActiveItemMenuListener
+        tags:
+            - { name: kernel.event_listener, event: sonata.admin.event.configure.menu.sidebar, method: configure }
+
+    shared.admin.extension.common:
+        class: App\Shared\Admin\Extension\CommonAdminExtension
+        tags:
+            - { name: sonata.admin.extension }

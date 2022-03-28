@@ -1,0 +1,23 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{% if admin.hasAccess('preview', object) and admin.hasRoute('preview') %}
+    {% set button_content = sonata_config.getOption('list_action_button_content') %}
+
+    <a
+        href="{{ admin.generateObjectUrl('preview', object, actions.link_parameters|default([])) }}"
+        class="btn btn-sm btn-default"
+        title="{{ 'action.preview'|trans({}, admin.translationDomain) }}"
+        target="_blank"
+    >
+        {% if button_content == 'icon' or button_content == 'all' %}
+            <i class="fas fa-eye" aria-hidden="true"></i>
+        {% endif %}
+        {% if button_content == 'text' or button_content == 'all' %}
+            {{ 'action.preview'|trans({}, admin.translationDomain) }}
+        {% else %}
+            <span class="sr-only">
+                {{ 'action.preview'|trans({}, admin.translationDomain) }}
+            </span>
+        {% endif %}
+    </a>
+{% endif %}

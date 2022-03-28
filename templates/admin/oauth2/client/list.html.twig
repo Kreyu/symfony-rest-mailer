@@ -1,0 +1,54 @@
+{% extends 'bundles/SonataAdminBundle/CRUD/base_list.html.twig' %}
+
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        function fallbackCopyTextToClipboard(text) {
+            var textArea = document.createElement("textarea")
+
+            textArea.value = text
+
+            // Avoid scrolling to bottom
+            textArea.style.top = "0"
+            textArea.style.left = "0"
+            textArea.style.position = "fixed"
+
+            document.body.appendChild(textArea)
+
+            textArea.focus()
+            textArea.select()
+
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                // ...
+            }
+
+            document.body.removeChild(textArea)
+        }
+        
+        function copyTextToClipboard(text) {
+            if (!navigator.clipboard) {
+                fallbackCopyTextToClipboard(text)
+
+                return
+            }
+
+            navigator.clipboard.writeText(text)
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const elements = document.getElementsByClassName('copy_secret_token_link')
+
+            for (let i = 0; i < elements.length; i++) {
+                const element = elements[i]
+
+                element.onclick = function () {
+                    copyTextToClipboard(this.dataset.secretToken)
+                }
+            }
+        })
+    </script>
+{% endblock %}

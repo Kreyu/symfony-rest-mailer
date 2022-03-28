@@ -1,0 +1,28 @@
+<?php
+
+return [
+    Symfony\Bundle\FrameworkBundle\FrameworkBundle::class => ['all' => true],
+    Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
+    Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],
+    Doctrine\Bundle\DoctrineBundle\DoctrineBundle::class => ['all' => true],
+    Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
+    Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
+    Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
+    Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
+    Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
+    Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
+    Symfony\Bundle\DebugBundle\DebugBundle::class => ['dev' => true],
+    Sonata\Doctrine\Bridge\Symfony\SonataDoctrineBundle::class => ['all' => true],
+    Sonata\Twig\Bridge\Symfony\SonataTwigBundle::class => ['all' => true],
+    Sonata\Form\Bridge\Symfony\SonataFormBundle::class => ['all' => true],
+    Sonata\Exporter\Bridge\Symfony\SonataExporterBundle::class => ['all' => true],
+    Sonata\BlockBundle\SonataBlockBundle::class => ['all' => true],
+    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
+    Sonata\AdminBundle\SonataAdminBundle::class => ['all' => true],
+    Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle::class => ['all' => true],
+    Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
+    ApiPlatform\Core\Bridge\Symfony\Bundle\ApiPlatformBundle::class => ['all' => true],
+    Nelexa\RequestDtoBundle\RequestDtoBundle::class => ['all' => true],
+    League\Bundle\OAuth2ServerBundle\LeagueOAuth2ServerBundle::class => ['all' => true],
+    Sonata\TranslationBundle\SonataTranslationBundle::class => ['all' => true],
+];

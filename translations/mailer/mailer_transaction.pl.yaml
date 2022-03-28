@@ -1,0 +1,54 @@
+Transactions: Wysyłki
+Transaction: Wysyłka
+
+# Breadcrumbs
+breadcrumb.link_transaction_list: Wysyłki
+
+# List
+list.label_id: ID
+list.label_uuid: UUID
+list.label_message_project: Projekt
+list.label_message: Wiadomość email
+list.label_transport_message_id: Message ID
+list.label_transport_debug: Log
+list.label_exception_code: Kod błędu
+list.label_exception_class: Wyjątek
+list.label_exception_message: Treść wyjątku
+list.label_created_at: Data utworzenia
+list.label__actions: Akcje
+
+# Datagrid filters
+filter.label_id: ID
+filter.label_uuid: UUID
+filter.label_message_project: Projekt
+filter.label_message: Wiadomość email
+filter.label_transport_message_id: Message ID
+filter.label_transport_debug: Log
+filter.label_exception_code: Kod błędu
+filter.label_exception_class: Wyjątek
+filter.label_exception_message: Treść wyjątku
+filter.label_created_at: Data utworzenia
+
+# Show
+show.group_basic: Podstawowe informacje
+show.group_details: Szczegóły
+show.label_id: ID
+show.label_uuid: UUID
+show.label_message_project: Projekt
+show.label_message: Wiadomość email
+show.label_transport_message_id: Message ID
+show.label_transport_debug: Log
+show.label_exception_code: Kod błędu
+show.label_exception_class: Wyjątek
+show.label_exception_message: Treść wyjątku
+show.label_created_at: Data utworzenia
+
+# Latest transaction modal
+delivery_modal.title: Szczegóły wysyłki
+delivery_modal.status.pending: Oczekiwanie
+delivery_modal.status.delivered: Dostarczono
+delivery_modal.status.delivered.message_id: Message ID
+delivery_modal.status.error.exception_code: Kod błędu
+delivery_modal.status.error.exception_class: Wyjątek
+delivery_modal.status.error: Błąd
+delivery_modal.close: Zamknij

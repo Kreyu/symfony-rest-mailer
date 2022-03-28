@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping http://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd">
+    <class name="App\Mailer\Entity\Message">
+        <attribute name="uuid">
+            <group>read.item</group>
+            <group>read.collection</group>
+        </attribute>
+        <attribute name="subject">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="from">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="to">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="replyTo">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="sender">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="returnPath">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="cc">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="bcc">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="priority">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="body">
+            <group>read.item</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="charset">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="attachments">
+            <group>read.item</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="createdAt">
+            <group>read.item</group>
+            <group>read.collection</group>
+        </attribute>
+    </class>
+</serializer>

@@ -1,0 +1,23 @@
+parameters:
+  mailer.attachment.storage_directory: '%kernel.project_dir%/resources/mailer/attachments/'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\Mailer\:
+    resource: '../../src/Mailer/'
+
+  App\Mailer\EventSubscriber\WorkerMessageEventSubscriber:
+    tags:
+      - { name: kernel.event_subscriber }
+
+  App\Mailer\ApiPlatform\Extension\ProjectMessageExtension:
+    tags:
+      - { name: api_platform.doctrine.orm.query_extension.collection }
+      - { name: api_platform.doctrine.orm.query_extension.item }
+
+  App\Mailer\Util\AttachmentFileManager:
+    arguments:
+      $storageDirectory: '%mailer.attachment.storage_directory%'

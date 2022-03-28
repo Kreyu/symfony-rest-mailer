@@ -1,0 +1,12 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+{# @var value \App\Entity\Mailer\ValueObject\Address[] #}
+
+{% extends 'admin/shared/field/base_list_field.html.twig' %}
+
+{%- block field_value %}
+    <ol style="list-style-type: none; padding: 0; margin: 0;">
+        {% for address in value %}
+            <li>{% if address.name %}<span style="font-weight: 600">[{{ address.name }}]</span> {% endif %}{{ address.address }}</li>
+        {% endfor %}
+    </ol>
+{% endblock -%}

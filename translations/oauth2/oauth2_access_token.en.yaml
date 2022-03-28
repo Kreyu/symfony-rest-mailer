@@ -1,0 +1,21 @@
+OAuth2 Access tokens: Access tokens
+AccessToken: Access token
+
+# Breadcrumbs
+breadcrumb.link_access_token_list: OAuth2 access tokens
+
+# Form
+form.group_basic: Basic information
+form.label_name: Name
+form.label_projects: Projects
+form.label_active: Active
+
+# List
+list.label_identifier: ID
+list.label_client: Client
+list.label_expiry: Expiration date
+list.label_revoked: Revoked
+list.label__actions: Actions
+
+# Actions
+action.revoke: Revoke

@@ -1,0 +1,22 @@
+monolog:
+    handlers:
+        main:
+            type: fingers_crossed
+            action_level: error
+            handler: nested_file
+            excluded_http_codes: [404, 405]
+            buffer_size: 50
+        nested_stderr:
+            type: stream
+            path: php://stderr
+            level: debug
+            formatter: monolog.formatter.json
+        nested_file:
+            type: rotating_file
+            path: '%kernel.logs_dir%/prod.log'
+            level: error
+            max_files: 30
+        console:
+            type: console
+            process_psr_3_messages: false
+            channels: ["!event", "!doctrine"]

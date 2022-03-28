@@ -1,0 +1,35 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{% extends get_admin_template('base_list_field', admin.code) %}
+
+{%- block field %}
+    {% apply spaceless %}
+        {% if field_description.options.collapse is defined %}
+            {% set collapse = field_description.options.collapse %}
+            <div class="sonata-readmore"
+                 data-readmore-height="{{ collapse.height|default(40) }}"
+                 data-readmore-more="{{ collapse.more|default('read_more')|trans({}, 'SonataAdminBundle') }}"
+                 data-readmore-less="{{ collapse.less|default('read_less')|trans({}, 'SonataAdminBundle') }}">
+                {% if value is null %}
+                    {{ block('field_value_none') }}
+                {% else %}
+                    {{ block('field_value') }}
+                {% endif %}
+            </div>
+        {% else %}
+            {% if value is null %}
+                {{ block('field_value_none') }}
+            {% else %}
+                {{ block('field_value') }}
+            {% endif %}
+        {% endif %}
+    {% endapply %}
+{% endblock -%}
+
+{% block field_value_none %}
+    <span class="label label-primary">{{ 'ui.none'|trans({}, 'SonataAdminBundle') }}</span>
+{% endblock %}
+
+{% block field_value %}
+    {{ value }}
+{% endblock %}

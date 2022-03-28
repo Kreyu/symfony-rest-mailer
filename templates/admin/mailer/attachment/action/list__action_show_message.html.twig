@@ -1,0 +1,24 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{% if admin.hasAccess('list', object) and admin.hasRoute('list') %}
+    {% set button_content = sonata_config.getOption('list_action_button_content') %}
+
+    {% set message_admin = admin.configurationPool.adminByAdminCode('mailer.admin.message') %}
+
+    <a
+        href="{{ message_admin.generateObjectUrl('show', object.message, actions.link_parameters|default([])) }}"
+        class="btn btn-sm btn-default"
+        title="{{ 'action.show_message'|trans({}, admin.translationDomain) }}"
+    >
+        {% if button_content == 'icon' or button_content == 'all' %}
+            <i class="fa fa-envelope-open-text" aria-hidden="true"></i>
+        {% endif %}
+        {% if button_content == 'text' or button_content == 'all' %}
+            {{ 'action.show_message'|trans({}, admin.translationDomain) }}
+        {% else %}
+            <span class="sr-only">
+                {{ 'action.show_message'|trans({}, admin.translationDomain) }}
+            </span>
+        {% endif %}
+    </a>
+{% endif %}

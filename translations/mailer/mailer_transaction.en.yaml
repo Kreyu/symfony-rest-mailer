@@ -1,0 +1,54 @@
+Transactions: Transactions
+Transaction: Transaction
+
+# Breadcrumbs
+breadcrumb.link_transaction_list: Transactions
+
+# List
+list.label_id: ID
+list.label_uuid: UUID
+list.label_message_project: Project
+list.label_message: Email message
+list.label_transport_message_id: Message ID
+list.label_transport_debug: Log
+list.label_exception_code: Exception code
+list.label_exception_class: Exception class
+list.label_exception_message: Exception message
+list.label_created_at: Created at
+list.label__actions: Actions
+
+# Datagrid filters
+filter.label_id: ID
+filter.label_uuid: UUID
+filter.label_message_project: Project
+filter.label_message: Email message
+filter.label_transport_message_id: Message ID
+filter.label_transport_debug: Log
+filter.label_exception_code: Exception code
+filter.label_exception_class: Exception class
+filter.label_exception_message: Exception message
+filter.label_created_at: Created at
+
+# Show
+show.group_basic: Basic information
+show.group_details: Details
+show.label_id: ID
+show.label_uuid: UUID
+show.label_message_project: Project
+show.label_message: Email message
+show.label_transport_message_id: Message ID
+show.label_transport_debug: Log
+show.label_exception_code: Exception code
+show.label_exception_class: Exception class
+show.label_exception_message: Exception message
+show.label_created_at: Created at
+
+# Delivery modal
+delivery_modal.title: Delivery details
+delivery_modal.status.pending: Pending
+delivery_modal.status.delivered: Delivered
+delivery_modal.status.delivered.message_id: Message ID
+delivery_modal.status.error.exception_code: Exception code
+delivery_modal.status.error.exception_class: Exception class
+delivery_modal.status.error: Error
+delivery_modal.close: Close

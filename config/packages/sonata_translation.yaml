@@ -1,0 +1,4 @@
+sonata_translation:
+  locales: [en, pl]
+  default_locale: en
+  locale_switcher: true

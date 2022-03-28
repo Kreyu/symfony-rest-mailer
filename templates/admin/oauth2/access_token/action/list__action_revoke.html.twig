@@ -1,0 +1,22 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{% if admin.hasAccess('revoke', object) and admin.hasRoute('revoke') and not object.revoked %}
+    {% set button_content = sonata_config.getOption('list_action_button_content') %}
+
+    <a
+        href="{{ admin.generateObjectUrl('revoke', object, actions.link_parameters|default([])) }}"
+        class="btn btn-sm btn-default"
+        title="{{ 'action.revoke'|trans({}, admin.translationDomain) }}"
+    >
+        {% if button_content == 'icon' or button_content == 'all' %}
+            <i class="fas fa-ban" aria-hidden="true"></i>
+        {% endif %}
+        {% if button_content == 'text' or button_content == 'all' %}
+            {{ 'action.revoke'|trans({}, admin.translationDomain) }}
+        {% else %}
+            <span class="sr-only">
+                {{ 'action.revoke'|trans({}, admin.translationDomain) }}
+            </span>
+        {% endif %}
+    </a>
+{% endif %}

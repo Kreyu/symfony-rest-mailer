@@ -1,0 +1,42 @@
+Attachments: Attachments
+Attachment: Attachment
+
+# Breadcrumbs
+breadcrumb.link_attachment_list: Attachments
+
+# List
+list.label_id: ID
+list.label_uuid: UUID
+list.label_message_project: Project
+list.label_message: Email message
+list.label_name: Name
+list.label_content_type: Content-Type
+list.label_content_id: Content-ID
+list.label_created_at: Created at
+list.label__actions: Actions
+
+# Datagrid filters
+filter.label_id: ID
+filter.label_uuid: UUID
+filter.label_message_project: Project
+filter.label_message: Email message
+filter.label_name: Name
+filter.label_content_type: Content-Type
+filter.label_content_id: Content-ID
+filter.label_created_at: Created at
+
+# Form
+form.group_basic: Basic information
+form.label_name: Nazwa
+form.label_content_type: Content-Type
+form.label_content_id: Content-ID
+form.label_file: File
+form.help_content_id: 'If given, attachment will be embedded. For example, attachment with Content-ID "example-file" will be available at "cid:example-file".'
+form.help_file: 'Note: selected file will overwrite existing one.'
+
+# Flashes
+flash.file_not_found: Attachment file %attachment% does not exist.
+
+# Actions
+action.download: Download
+action.show_message: Show email message

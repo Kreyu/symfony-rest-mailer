@@ -1,0 +1,8 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+{# @var value \App\Entity\Mailer\ValueObject\Address[] #}
+
+{% extends 'admin/shared/field/base_list_field.html.twig' %}
+
+{%- block field_value %}
+    <pre>{{ value }}</pre>
+{% endblock -%}

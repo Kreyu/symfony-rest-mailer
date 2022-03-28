@@ -1,0 +1,64 @@
+Messages: Email messages
+Message: Email message
+
+# Breadcrumbs
+breadcrumb.link_message_list: Email messages
+
+# List
+list.label_id: ID
+list.label_uuid: UUID
+list.label_project: Project
+list.label_subject: Subject
+list.label_from: From
+list.label_to: To
+list.label_latest_transaction: Latest transaction
+list.label_created_at: Created at
+list.label__actions: Actions
+
+# Show
+show.group_basic: Basic information
+show.group_metadata: MIME Metadata
+show.label_id: ID
+show.label_uuid: UUID
+show.label_project: Project
+show.label_created_at: Created at
+show.label_subject: Subject
+show.label_from: From
+show.label_to: To
+show.label_reply_to: Reply-To
+show.label_cc: CC
+show.label_bcc: BCC
+show.label_sender: Sender
+show.label_priority: Priority
+show.label_date: Date
+show.label_return_path: Return Path
+show.label_charset: Charset
+
+# Datagrid filters
+filter.label_id: ID
+filter.label_uuid: UUID
+filter.label_project: Project
+filter.label_subject: Subject
+filter.label_from: From
+filter.label_to: To
+filter.label_created_at: Created at
+
+# Latest transaction modal
+latest_transaction_modal.title: Delivery details
+latest_transaction_modal.status.pending: Pending
+latest_transaction_modal.status.delivered: Delivered
+latest_transaction_modal.status.delivered.message_id: Message ID
+latest_transaction_modal.status.error.exception_code: Exception code
+latest_transaction_modal.status.error.exception_class: Exception class
+latest_transaction_modal.status.error: Error
+
+# Actions
+action.back_to_show: Back to message
+action.list_attachments: Attachments
+action.list_transactions: Transactions
+action.preview: Preview
+action.resend: Resend
+
+# Flashes
+flash.attachment_file_not_found: At least one attachment file of message %message% does not exist.
+flash.resend_action_successful: 'Copy of the message (including attachments) created and added to the queue. Created message identifier: #%message_id% (%message_uuid%).'

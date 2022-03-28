@@ -1,0 +1,118 @@
+sonata_admin:
+    title: '%env(APP_TITLE)%'
+    options:
+        logo_content: text
+    assets:
+        extra_stylesheets:
+            - admin/tweaks.css
+    templates:
+        layout: '@SonataTranslation/standard_layout.html.twig'
+    show_mosaic_button: false
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+        groups:
+            project:
+                label: projects
+                label_catalogue: knp_menu
+                icon: fa fa-list
+                on_top: true
+                items:
+                    - project.admin.project
+            mailer:
+                label: mailer
+                label_catalogue: knp_menu
+                icon: fa fa-envelope
+                keep_open: true
+                items:
+                    - mailer.admin.message
+                    - mailer.admin.attachment
+                    - mailer.admin.transaction
+            oauth2:
+                label: oauth2
+                label_catalogue: knp_menu
+                icon: fa fa-user
+                keep_open: true
+                items:
+                    - oauth2.admin.client
+                    - oauth2.admin.access_token
+    extensions:
+        shared.admin.extension.common:
+            global: true
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+
+services:
+    oauth2.admin.client:
+        class: App\OAuth2\Admin\ClientAdmin
+        arguments: [~, '%league.oauth2_server.client.classname%', ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              label: OAuth2 Clients
+              label_translator_strategy: sonata.admin.label.strategy.underscore
+        calls:
+            - [setEventDispatcher, ['@event_dispatcher']]
+            - [setTranslationDomain, [oauth2_client]]
+            - [setTemplate, ['list', 'admin/oauth2/client/list.html.twig']]
+
+    oauth2.admin.access_token:
+        class: App\OAuth2\Admin\AccessTokenAdmin
+        arguments: [~, League\Bundle\OAuth2ServerBundle\Model\AccessToken, App\OAuth2\Controller\Admin\AccessTokenCrudController]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              label: OAuth2 Access tokens
+              label_translator_strategy: sonata.admin.label.strategy.underscore
+        calls:
+            - [setEventDispatcher, ['@event_dispatcher']]
+            - [setTranslationDomain, [oauth2_access_token]]
+
+    project.admin.project:
+        class: App\Project\Admin\ProjectAdmin
+        arguments: [~, App\Project\Entity\Project, ~]
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              label: Projects
+              label_translator_strategy: sonata.admin.label.strategy.underscore
+        calls:
+            - [setTranslationDomain, [project]]
+
+    mailer.admin.message:
+        class: App\Mailer\Admin\MessageAdmin
+        arguments: [~, App\Mailer\Entity\Message, App\Mailer\Controller\Admin\MessageCrudController]
+        tags:
+            -   name: sonata.admin
+                manager_type: orm
+                label: Messages
+                label_translator_strategy: sonata.admin.label.strategy.underscore
+        calls:
+            - [addChild, ['@mailer.admin.transaction', message]]
+            - [addChild, ['@mailer.admin.attachment', message]]
+            - [setTranslationDomain, [mailer_message]]
+
+    mailer.admin.attachment:
+        class: App\Mailer\Admin\AttachmentAdmin
+        arguments: [~, App\Mailer\Entity\Attachment, App\Mailer\Controller\Admin\AttachmentCrudController]
+        tags:
+            -   name: sonata.admin
+                manager_type: orm
+                label: Attachments
+                label_translator_strategy: sonata.admin.label.strategy.underscore
+        calls:
+            - [setTranslationDomain, [mailer_attachment]]
+
+    mailer.admin.transaction:
+        class: App\Mailer\Admin\TransactionAdmin
+        arguments: [~, App\Mailer\Entity\Transaction, ~]
+        tags:
+            -   name: sonata.admin
+                manager_type: orm
+                label: Transactions
+                label_translator_strategy: sonata.admin.label.strategy.underscore
+        calls:
+            - [setTranslationDomain, [mailer_transaction]]

@@ -1,0 +1,12 @@
+{% extends '@!SonataAdmin/CRUD/base_list.html.twig' %}
+
+{% block title %}
+    {% if admin.isChild %}-{% endif %}
+    {{ parent() }}
+{% endblock %}
+
+{% block navbar_title %}
+    {% if admin.isChild and admin.parent.subject %}
+        {{ admin.parent.toString(admin.parent.subject)|u.truncate(35, '...') }}
+    {% endif %}
+{% endblock %}

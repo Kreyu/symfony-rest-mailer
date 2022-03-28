@@ -1,0 +1,10 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    form_themes:
+        - '@SonataForm/Form/datepicker.html.twig'
+    globals:
+        app_title: '%env(APP_TITLE)%'
+
+when@test:
+    twig:
+        strict_variables: true

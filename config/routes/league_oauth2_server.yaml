@@ -1,0 +1,5 @@
+league_oauth2_server_login:
+  path: /api/oauth2/login
+  methods: [POST]
+  defaults:
+    _controller: league.oauth2_server.controller.token::indexAction

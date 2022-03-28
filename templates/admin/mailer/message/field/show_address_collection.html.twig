@@ -1,0 +1,16 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+{# @var value \App\Entity\Mailer\ValueObject\Address[] #}
+
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{%- block field_value %}
+    <ul style="list-style-type: none; padding: 0; margin: 0;">
+        {% for address in value %}
+            <li>
+                {% with { value: address, admin: admin } %}
+                    {{ block('field_value', 'admin/mailer/message/field/show_address.html.twig') }}
+                {% endwith %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock -%}

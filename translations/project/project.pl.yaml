@@ -1,0 +1,26 @@
+Projects: Projekty
+
+# Breadcrumbs
+breadcrumb.link_project_list: Projekty
+breadcrumb.link_project_create: Nowy projekt
+
+# Form
+form.group_basic: Podstawowe informacje
+form.group_mailer: Mailer
+form.label_name: Nazwa
+form.label_mailer_configuration_dsn: DSN
+
+# List
+list.label_id: ID
+list.label_uuid: UUID
+list.label_name: Nazwa
+list.label_mailer_configuration_dsn: Mailer DSN
+list.label__actions: Akcje
+
+# Show
+show.group_basic: Basic information
+show.group_mailer: Mailer
+show.label_id: ID
+show.label_uuid: UUID
+show.label_name: Nazwa
+show.label_mailer_configuration_dsn: Mailer DSN

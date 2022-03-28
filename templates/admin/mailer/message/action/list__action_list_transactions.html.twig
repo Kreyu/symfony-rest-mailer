@@ -1,0 +1,22 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{% if admin.hasAccess('list', object) and admin.hasRoute('list') %}
+    {% set button_content = sonata_config.getOption('list_action_button_content') %}
+
+    <a
+        href="{{ admin.generateUrl('mailer.admin.message|mailer.admin.transaction.list', { id: object.id }) }}"
+        class="btn btn-sm btn-default"
+        title="{{ 'action.list_transactions'|trans({}, admin.translationDomain) }}"
+    >
+        {% if button_content == 'icon' or button_content == 'all' %}
+            <i class="fas fa-history" aria-hidden="true"></i>
+        {% endif %}
+        {% if button_content == 'text' or button_content == 'all' %}
+            {{ 'action.list_transactions'|trans({}, admin.translationDomain) }}
+        {% else %}
+            <span class="sr-only">
+                {{ 'action.list_transactions'|trans({}, admin.translationDomain) }}
+            </span>
+        {% endif %}
+    </a>
+{% endif %}

@@ -1,0 +1,11 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\OAuth2\:
+    resource: '../../src/OAuth2/'
+
+  App\OAuth2\ApiPlatform\OpenApi\OAuth2OpenApiFactoryDecorator:
+    decorates: 'api_platform.openapi.factory'
+    arguments: [ '@App\OAuth2\ApiPlatform\OpenApi\OAuth2OpenApiFactoryDecorator.inner' ]

@@ -1,0 +1,20 @@
+{% extends '@!SonataTranslation/standard_layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="{{ asset(sonata_config.logo) }}">
+{% endblock %}
+
+{% block sonata_head_title %}
+    {{ app_title }}
+
+    {% if _title is not empty %}
+        {{ _title|striptags|raw }}
+    {% else %}
+        {% if action is defined %}
+            -
+            {{ render_breadcrumbs_for_title(admin, action) }}
+        {% endif %}
+    {% endif %}
+{% endblock %}

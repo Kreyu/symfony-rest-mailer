@@ -1,0 +1,8 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+{# @var value \App\Entity\Mailer\ValueObject\Address #}
+
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{%- block field_value %}
+    {% if value.name %}<span style="font-weight: 600">[{{ value.name }}]</span> {% endif %}{{ value.address }}
+{% endblock -%}

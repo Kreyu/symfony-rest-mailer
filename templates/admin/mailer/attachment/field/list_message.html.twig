@@ -1,0 +1,29 @@
+{# @var admin \Sonata\AdminBundle\Admin\AdminInterface #}
+{# @var object \App\Mailer\Entity\Attachment #}
+{# @var value \App\Mailer\Entity\Message #}
+
+{% extends 'admin/shared/field/base_list_field.html.twig' %}
+
+{% set message_admin = admin.configurationPool.adminByAdminCode('mailer.admin.message') %}
+
+{# @var message_admin \Sonata\AdminBundle\Admin\AdminInterface #}
+
+{%- block field_value %}
+    {% if message_admin.hasAccess('show', value) and message_admin.hasRoute('show') %}
+        <a href="{{ message_admin.generateUrl('show', { id: value.id }) }}"
+           {% if value.subject is not empty %}title="{{ value.uuid }}" style="cursor: pointer; text-decoration: underline dotted"{% endif %}>
+
+            {% if value.subject is not empty %}
+                {{ value.subject|u.truncate(50, '...') }}
+            {% else %}
+                {{ value.uuid }}
+            {% endif %}
+        </a>
+    {% else %}
+        {% if value.subject is not empty %}
+            <abbr title="{{ value.uuid }}">{{ value.subject|u.truncate(50, '...') }}</abbr>
+        {% else %}
+            {{ value.uuid }}
+        {% endif %}
+    {% endif %}
+{% endblock -%}

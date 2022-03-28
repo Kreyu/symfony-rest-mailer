@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serializer xmlns="http://symfony.com/schema/dic/serializer-mapping"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://symfony.com/schema/dic/serializer-mapping http://symfony.com/schema/dic/serializer-mapping/serializer-mapping-1.0.xsd">
+    <class name="App\Mailer\Entity\Attachment">
+        <attribute name="uuid">
+            <group>read.item</group>
+            <group>read.collection</group>
+        </attribute>
+        <attribute name="name">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="contentType">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="contentId">
+            <group>read.item</group>
+            <group>read.collection</group>
+            <group>write</group>
+        </attribute>
+        <attribute name="createdAt">
+            <group>read.item</group>
+            <group>read.collection</group>
+        </attribute>
+    </class>
+</serializer>
