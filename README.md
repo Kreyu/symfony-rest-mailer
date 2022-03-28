@@ -7,6 +7,8 @@ _Send emails using simple HTTP requests._
 Emails sent through this application are available to render & preview in the browser.   
 This includes their attachments, both attached (classic way) and embedded (using [RFC-2392 Content-ID](https://datatracker.ietf.org/doc/html/rfc2392)).
 
+<img src="./doc/img/transactions.png">
+
 Emails are sent asynchronously, and each send attempt (named _transaction_) is stored in the system, available to preview in the browser. This includes details about occurred exceptions when something goes wrong, and Message-ID and SMTP log on success.
 
 ## Features

@@ -43,7 +43,7 @@ class AttachmentFileManager
 
     public function getStorageDirectory(): string
     {
-        return $this->storageDirectory;
+        return rtrim($this->storageDirectory, '/');
     }
 
     private function getFilename(Attachment $attachment): string

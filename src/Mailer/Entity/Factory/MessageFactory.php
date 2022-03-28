@@ -6,16 +6,22 @@ namespace App\Mailer\Entity\Factory;
 
 use App\Mailer\Entity\Dto\MessageDto;
 use App\Mailer\Entity\Message;
+use App\Mailer\Exception\Base64DecodeException;
+use App\Mailer\Util\AttachmentFileManager;
 
 class MessageFactory
 {
     public function __construct(
         private AddressFactory $addressFactory,
         private AttachmentFactory $attachmentFactory,
+        private AttachmentFileManager $attachmentFileManager,
     ) {
         // ...
     }
 
+    /**
+     * @throws Base64DecodeException
+     */
     public function createFromDto(MessageDto $dto): Message
     {
         $message = new Message();
@@ -57,6 +63,8 @@ class MessageFactory
         foreach ($dto->attachments as $attachmentDto) {
             $attachment = $this->attachmentFactory->createFromDto($attachmentDto);
             $attachment->setMessage($message);
+
+            $this->attachmentFileManager->saveFile($attachment, $attachmentDto->base64);
 
             $message->addAttachment($attachment);
         }

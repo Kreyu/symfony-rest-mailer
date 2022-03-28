@@ -7,6 +7,7 @@ namespace App\Mailer\Controller\Api;
 use ApiPlatform\Core\Bridge\Symfony\Validator\Exception\ValidationException;
 use App\Mailer\Entity\Dto\MessageDto;
 use App\Mailer\Entity\Factory\MessageFactory;
+use App\Mailer\Exception\Base64DecodeException;
 use App\Mailer\Messenger\SendMessage\SendMessage;
 use App\OAuth2\Entity\Client;
 use App\Project\Entity\Project;
@@ -38,6 +39,7 @@ class CreateMessageController
 
     /**
      * @throws ValidationException
+     * @throws Base64DecodeException
      */
     public function __invoke(Request $request, Security $security): JsonResponse
     {
